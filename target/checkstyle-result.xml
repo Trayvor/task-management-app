@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="9.3">
+<file name="C:\Users\dalv2\IdeaProjects\task-management-app\src\main\java\com\portfolio\taskmanagementapp\TaskManagementAppApplication.java">
+</file>
+<file name="C:\Users\dalv2\IdeaProjects\task-management-app\src\test\java\com\portfolio\taskmanagementapp\TaskManagementAppApplicationTests.java">
+</file>
+<file name="C:\Users\dalv2\IdeaProjects\task-management-app\src\main\resources\application.properties">
+</file>
+</checkstyle>
