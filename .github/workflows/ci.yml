@@ -15,7 +15,7 @@ jobs:
           MYSQL_ROOT_PASSWORD: rootpass
         ports:
           - 3306:3306
-
+        name: mysql
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
