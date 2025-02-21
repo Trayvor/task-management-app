@@ -35,9 +35,6 @@ jobs:
           echo "MYSQL_PASSWORD=rootpass" >> $GITHUB_ENV
           echo "MYSQL_DB_NAME=task_management_app_db" >> $GITHUB_ENV
 
-      - name: Build and verify
-        run: mvn clean verify
-
       - name: Wait for MySQL to be ready
         run: |
           until docker exec mysql mysqladmin --user=root --password=rootpass --host=localhost --port=3306 ping --silent; do
@@ -45,3 +42,6 @@ jobs:
             sleep 5
           done
         continue-on-error: true
+
+      - name: Build and verify
+        run: mvn clean verify
