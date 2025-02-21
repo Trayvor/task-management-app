@@ -14,11 +14,8 @@ jobs:
         env:
           MYSQL_ROOT_PASSWORD: rootpass
           MYSQL_DATABASE: task_management_app_db
-          MYSQL_USER: root
-          MYSQL_PASSWORD: rootpass
         ports:
           - 3306:3306
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -40,13 +37,10 @@ jobs:
         run: |
           docker ps -a
 
-      - name: Show MySQL container logs
-        run: |
-          docker logs mysql
-
       - name: Wait for MySQL to be ready
         run: |
-          until docker exec mysql mysqladmin --user=root --password=rootpass --host=localhost --port=3306 ping --silent; do
+          CONTAINER_ID=$(docker ps -q --filter "ancestor=mysql:8")
+          until docker exec $CONTAINER_ID mysqladmin --user=root --password=rootpass --host=localhost --port=3306 ping --silent; do
             echo "Waiting for MySQL..."
             sleep 10
           done
