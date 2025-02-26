@@ -32,6 +32,8 @@ jobs:
           echo "MYSQL_USERNAME=root" >> $GITHUB_ENV
           echo "MYSQL_PASSWORD=rootpass" >> $GITHUB_ENV
           echo "MYSQL_DB_NAME=task_management_app_db" >> $GITHUB_ENV
+          echo "JWT_SECRET=my-32-character-ultra-secure-and-ultra-long-secret" >> $GITHUB_ENV
+          echo "JWT_EXPIRATION=30000000" >> $GITHUB_ENV
 
       - name: Check MySQL container status
         run: |
