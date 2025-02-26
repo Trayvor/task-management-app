@@ -35,7 +35,7 @@ public class ProjectUser {
     private Project project;
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
-    private Project user;
+    private User user;
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private ProjectUserRole role;
