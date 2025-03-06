@@ -2,15 +2,9 @@ name: Backend Auth Service CI
 
 on:
   push:
-    branches:
-      - 'services/auth-service'
-    paths:
-      - 'backend/auth-service/**'
+    
   pull_request:
-    branches:
-      - 'services/auth-service'
-    paths:
-      - 'backend/auth-service/**'
+    
 
 jobs:
   build:
