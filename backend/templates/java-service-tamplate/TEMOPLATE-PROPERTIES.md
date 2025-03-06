@@ -11,4 +11,6 @@
 9. Mapstructs
 10. Jsonwebtoken
 11. Hibernate validator
+
+Except that, template include JWT authenticator, common exception and config code
  
