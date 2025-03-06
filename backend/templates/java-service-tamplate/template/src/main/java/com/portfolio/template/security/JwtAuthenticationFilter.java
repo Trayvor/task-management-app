@@ -1,4 +1,4 @@
-package template;
+package com.portfolio.template.security;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

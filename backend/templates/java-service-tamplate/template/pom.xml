@@ -4,23 +4,21 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId> <!-- CHANGE ME -->
+        <artifactId>spring-boot-starter-parent</artifactId>
         <version>3.4.3</version>
-        <relativePath/>
+        <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.portfolio</groupId>
-    <artifactId>template</artifactId>
+    <artifactId>auth-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>template</name>
-    <description>template</description> <!-- CHANGE ME -->
+    <name>TEMPLATE</name>
+    <description>TEMPLATE</description>
     <url/>
     <licenses>
         <license/>
     </licenses>
     <developers>
-        <developer>
-            <name>Vladyslav Herasymenko</name>
-        </developer>
+        <developer/>
     </developers>
     <scm>
         <connection/>
@@ -31,10 +29,12 @@
     <properties>
         <java.version>21</java.version>
         <maven.checkstyle.plugin.configLocation>checkstyle.xml</maven.checkstyle.plugin.configLocation>
+        <lombok.version>1.18.36</lombok.version>
         <lombok.mapstruct.binding.version>0.2.0</lombok.mapstruct.binding.version>
         <mapstruct.version>1.5.5.Final</mapstruct.version>
         <mapstruct.processor.version>1.6.3</mapstruct.processor.version>
         <jsonwebtoken.version>0.12.6</jsonwebtoken.version>
+        <springdoc.version>2.1.0</springdoc.version>
     </properties>
     <dependencies>
         <dependency>
@@ -83,6 +83,7 @@
         <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <version>${springdoc.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -98,6 +99,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -116,11 +118,13 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
                 <configuration>
                     <annotationProcessorPaths>
                         <path>
                             <groupId>org.projectlombok</groupId>
                             <artifactId>lombok</artifactId>
+                            <version>${lombok.version}</version>
                         </path>
                         <path>
                             <groupId>org.mapstruct</groupId>
@@ -134,12 +138,6 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <excludes>
-                        <exclude>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                        </exclude>
-                    </excludes>
                 </configuration>
             </plugin>
             <plugin>

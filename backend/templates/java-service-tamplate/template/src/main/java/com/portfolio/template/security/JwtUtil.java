@@ -1,4 +1,4 @@
-package template;
+package com.portfolio.template.security;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
