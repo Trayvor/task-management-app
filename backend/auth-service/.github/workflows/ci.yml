@@ -3,10 +3,10 @@ name: CI
 on:
   push:
     paths:
-      - 'services/auth-service/**'
+      - 'services/auth-service'
   pull_request:
     paths:
-      - 'services/auth-service/**'
+      - 'services/auth-service'
 
 jobs:
   build:
