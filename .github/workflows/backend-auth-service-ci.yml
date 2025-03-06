@@ -2,11 +2,15 @@ name: Backend Auth Service CI
 
 on:
   push:
-    paths:
+    branches:
       - 'services/auth-service'
+    paths:
+      - 'backend/auth-service/**'
   pull_request:
-    paths:
+    branches:
       - 'services/auth-service'
+    paths:
+      - 'backend/auth-service/**'
 
 jobs:
   build:
@@ -53,4 +57,7 @@ jobs:
         continue-on-error: true
 
       - name: Build and verify
-        run: mvn clean verify
+      
+        run: |
+          mvn clean verify
+          cd backend/auth-service
